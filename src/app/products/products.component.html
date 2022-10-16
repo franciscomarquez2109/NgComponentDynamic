@@ -1,0 +1,7 @@
+<mat-list>
+    <div mat-subheader>Products</div>
+    <mat-list-item *ngFor="let pro of products">
+        <div mat-line>{{pro.name}}</div>
+        <div mat-line> {{pro.price | number}} </div>
+    </mat-list-item>    
+</mat-list>
