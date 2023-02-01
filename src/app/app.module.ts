@@ -8,8 +8,8 @@ import { CompDynamicDirective } from './directives/comp-dynamic.directive';
 import { ProductsComponent } from './products/products.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatListModule} from '@angular/material/list';
+import {MatLegacyButtonModule as MatButtonModule} from '@angular/material/legacy-button';
+import {MatLegacyListModule as MatListModule} from '@angular/material/legacy-list';
 
 @NgModule({
   declarations: [
