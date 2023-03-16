@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Data } from '@angular/router';
 import { Products } from '../interfaces/products';
 @Component({
   selector: 'app-products',
@@ -6,7 +7,7 @@ import { Products } from '../interfaces/products';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-
+  @Input() receivedData?: Data = {};
   products: Array<Products> = [
     {
       name: 'Computer',

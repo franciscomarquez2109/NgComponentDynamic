@@ -1,4 +1,4 @@
-import { Component,ComponentFactoryResolver,ViewChild } from '@angular/core';
+import { Component,ComponentFactoryResolver,ComponentRef,ViewChild } from '@angular/core';
 import { ProductsComponent } from './products/products.component';
 import { CompDynamicDirective } from './directives/comp-dynamic.directive';
 @Component({
@@ -15,10 +15,11 @@ export class AppComponent {
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver
   ){}
-
   myProducts(){
     const component = this.componentFactoryResolver.resolveComponentFactory(ProductsComponent);
     this.compDynamic.viewContainerRef.clear();
-    this.compDynamic.viewContainerRef.createComponent(component);
+    let compRef = this.compDynamic.viewContainerRef.createComponent(component);
+    //send data component
+    compRef.setInput('receivedData','x is the value send')
   }
 }
